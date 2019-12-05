@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Sok - 区块链中可供选择的共识协议的元分析 | Chuqiao&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要 - 区块链技术近来在公众， 在工业界和科研界都收到了广泛关注。 然而， 这些区块链系统现在由于可扩展性和安全性上的挑战还不能支持强大而大规模的应用。能解决这些挑战的最基本步骤就在共识层面。正因如此，工业界和学术界都在研究与开发更多可供选择的共识算法上投入巨大，尝试找到一个可以取代中本聪发明的比特币的共识算法。相比较工作量证明(PoW)，很多这些算法倾向于用权益证明(PoS)作为抗女巫攻击机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sok - 区块链中可供选择的共识协议的元分析">
+<meta property="og:url" content="http://yoursite.com/2019/12/05/sok/index.html">
+<meta property="og:site_name" content="Chuqiao's Blog">
+<meta property="og:description" content="摘要 - 区块链技术近来在公众， 在工业界和科研界都收到了广泛关注。 然而， 这些区块链系统现在由于可扩展性和安全性上的挑战还不能支持强大而大规模的应用。能解决这些挑战的最基本步骤就在共识层面。正因如此，工业界和学术界都在研究与开发更多可供选择的共识算法上投入巨大，尝试找到一个可以取代中本聪发明的比特币的共识算法。相比较工作量证明(PoW)，很多这些算法倾向于用权益证明(PoS)作为抗女巫攻击机制">
+<meta property="og:updated_time" content="2019-12-05T09:05:59.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sok - 区块链中可供选择的共识协议的元分析">
+<meta name="twitter:description" content="摘要 - 区块链技术近来在公众， 在工业界和科研界都收到了广泛关注。 然而， 这些区块链系统现在由于可扩展性和安全性上的挑战还不能支持强大而大规模的应用。能解决这些挑战的最基本步骤就在共识层面。正因如此，工业界和学术界都在研究与开发更多可供选择的共识算法上投入巨大，尝试找到一个可以取代中本聪发明的比特币的共识算法。相比较工作量证明(PoW)，很多这些算法倾向于用权益证明(PoS)作为抗女巫攻击机制">
+  
+    <link rel="alternate" href="/atom.xml" title="Chuqiao&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+  
+    <body>
+  
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container" class="container">
+        <article id="post-sok" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sok - 区块链中可供选择的共识协议的元分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><em>摘要</em> - <strong>区块链技术近来在公众， 在工业界和科研界都收到了广泛关注。 然而， 这些区块链系统现在由于可扩展性和安全性上的挑战还不能支持强大而大规模的应用。能解决这些挑战的最基本步骤就在共识层面。正因如此，工业界和学术界都在研究与开发更多可供选择的共识算法上投入巨大，尝试找到一个可以取代中本聪发明的比特币的共识算法。相比较工作量证明(PoW)，很多这些算法倾向于用权益证明(PoS)作为抗女巫攻击机制(Sybil control mechanism)。但到现在为止对这些可供选择的共识协议并没有一个全面的严格的比较。这篇文章对于主要的区块链协议提供了一个系统化的理解，了解他们共同面对的挑战和解决方式，并提供了一个比较这些协议的正式结构。我们把这些协议根据网络，对抗性和经济模型进行拆解，深入理解他们在选择提出者(proposer)和委员会(committees)，传播(propagation)和确定性(finality)时遇到的共同挑战</strong></p>
+<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h2><p>区块链技术提供了一个翻天覆地的创新，质疑了分布式计算和金融理论中长期确立的范例，并为去中心化网络应用提供了一个创新性的平台。尤其是虚拟货币(像是比特币或者以太坊)相比较传统货币而言的诸多明显优势已经吸引了很多注意，包括更高的透明度和更能抵抗伪造的能力，以及一些其他的优势[8]。这些货币的交易由一种分布式账本支持，而这种分布式账本又由一种被称作区块链的数据结构构成。区块链这里指代“一种去中心化的，可复制的，不可改变的，并防止篡改的日志”[7]。更关键的是，“在区块链上的数据不能被删除，并且任何人都能读到并证实区块链上数据的正确性”[7]。区块链由<em>区块</em>组成，区块是包含交易的结构。尤为关键的是，进一步说，区块链中一个重要的方面是无需许可的共识，至少在中本聪最初的实例中，“任何人(无需获得任何中央或者分布式权威的准许即可)可以加入(或离开)协议的运行，并且没有认证机制”。此外，参与者可以“自愿”加入或者离开系统[30]。</p>
+<p>那些让区块链变得更安全并在账本中增加新的交易的计算机被称为<em>矿工 (miner)</em>。这些矿工在“最长链”上挖矿从而和别的矿工在账本的历史上达成共识并得到金钱上的激励。这个过程被称作中本聪共识，由一个被称作<em>工作量证明 (PoW)</em>的步骤支持[7]。 </p>
+<h3 id="1-1-问题定义"><a href="#1-1-问题定义" class="headerlink" title="1.1 问题定义"></a>1.1 问题定义</h3><p>在中本聪定义的工作量证明中，其本身对于能源和运算力都是一个浪费，并且中本聪共识相较于一致性(consistency)更倾向于可用性(availability)。正因如此，很多人提出了其他可供选择的共识协议，他们中的许多倾向于用权益证明(PoS)作为抗女巫攻击机制(Sybil control mechanism)并提供多种不同的最终性保证(finality gaurantee)，包括偏袒可用性(availability)和偏袒一致性(consistency)的协议。在一个PoS系统里，共识是通过验证者(validator)达成的一致意见而形成，这些验证者把自己的虚拟货币抵押给网络。这些验证者和PoW系统中的矿工相似。然而，在PoS中， 验证者通过存放（抵押）虚拟货币的方式在新的区块上提出建议（propose）或者投票（vote）。相比较于PoW在比特币中既是抗女巫攻击机制(Sybil control mechanism)又是随机选择区块创建者的根源，PoS则仅仅是一个抗女巫攻击机制(Sybil control mechanism)，因此它需要一个不同的随机性协议来选择提名人(proposer)。PoS的支持者提出PoS可以解决PoW所面临的很多挑战，比如低效能，高延迟和趋中心化风险，更多例子就不一一陈述[15]。</p>
+<p>现今，还没有一个充分并全面的关于其他可供选择的倾向于PoS的共识协议的分析。这个类别的协议已经被很多研究组织和在这个领域的很多项目深入的探索，并有很强的潜力去驱动一个扩展性更好，效能更高的区块链平台。创建一个共识算法从根本上具有一定复杂度，并需要深入理解先前的工作从而更有效的优化现有方案或是将已经存在的方案应用到一个特殊的用例(use case)上。我们的目标是提供一个对于主要可供选择的区块链共识协议的全面分析，把这些协议放在相同的框架中评估，从而达到准确而有效的比较。这里我们把协议用网络，对抗性和经济模型分类，并研究他们在提议者和委员会选择，信息传递，最终确定性，如何处理流失，生成随机的安全性，网络分区解析，以及可扩展性上的遇到的共同挑战。我们将会特别聚焦在对Tendermint [37], Thunderella [36], Algorand [4], Dfinity [13], Ouroboros Genesis [25], Casper FFG [39] 和 Casper TFG [40]的分析上。</p>
+<h3 id="1-2-相关工作"><a href="#1-2-相关工作" class="headerlink" title="1.2 相关工作"></a>1.2 相关工作</h3><p>这篇文章延续了学术界文章的更替，为比特币和其相关的话题提供了系统的回顾和元分析。Bonneau及其他人[9]对虚拟货币进行了一个数学上的评估。Zohar [34]研究了关于区块链，尤其是比特币的可扩展问题。Pass和Shi[30] 用数学分析了基于区块链的公共(permissionless)，冷清(sleepy)共识，严格证明了这种共识比经典共识更加困难。Croman及其他人[12]对于可扩展性的瓶颈发表了一个意见书，并提供了解决方案。</p>
+<p>实际上，已经有学术文章，包括Vukolic[33]，鼓励从PoW转移到PoS，并呼吁提供更严格的分析框架。基于安全性和分叉阻性(fork-resistance)，这进一步鼓励我们使用经典BFT协议而不是PoW。Bano及其他人[7]研究了区块链的共识协议，并调查了不同类型的可在公共(permissionless)环境中使用的可替代共识协议。Gervais和其他人[19]则描述了一个可以评估PoW区块链安全性和性能的框架。</p>
+<h3 id="1-3-问题定义"><a href="#1-3-问题定义" class="headerlink" title="1.3 问题定义"></a>1.3 问题定义</h3><h4 id="1-3-1-经典环境下的共识"><a href="#1-3-1-经典环境下的共识" class="headerlink" title="1.3.1 经典环境下的共识."></a>1.3.1 经典环境下的共识.</h4><p>共识问题的本质是多个处理器对于输出值的协议。为了解决共识问题，需要保证终止，协议和合法性。终止指的是每一个无误的节点都被分配一些值。协议指的是所有正确的节点都终止在相同的值上。合法性指的是如果所有的节点都提出了相同的值那么所有正确的节点都必须决定这个值。</p>
+<h4 id="1-3-2-在区块链环境下的共识"><a href="#1-3-2-在区块链环境下的共识" class="headerlink" title="1.3.2 在区块链环境下的共识."></a>1.3.2 在区块链环境下的共识.</h4><p>值得注意的是，区块链共识和传统定义下的共识不甚相同。区块链必须能够处理大量的流失(churn)，并且一般意义上也需要处理共有协议(permissionless consensus)。<br>这些协议都需要一些我们在这里定义的属性。Pass和Shi指出一致性是共识的前提条件，这个条件要求“所有诚实的节点的日志都必须和其他节点的日志一致，即使一些节点可能比其他节点处理的更快”。这与协议的定义相似。除此之外，Pass和Shi描述了一个活跃度(liveness)属性，即“一个诚实的用户提交的交易需要被有效而快速的纳入账本”。这个可以被看作终止属性。<em>安全</em>属性，在之后的工作中被明确的规定为必须的属性，被简单的定义为“不受欢迎的事情一定不会发生”[22]。所以，当涉及到安全性时，这些协议会说明什么行为协议将会避免触发。可用性需要“每一个被没有错误的系统节点接收的请求都需要产生一个结果”[20]。由此，Brewer的CAP理论说明在有网络划分的系统中，一个协议不能同时满足可用性和一致性，这是这些协议所面临的一个最基本的妥协[20]。<br>此外，下面这些是区块链设定下不同的参与方。<em>节点</em>(Node)是任何与区块链交流的人，<em>验证人</em>(validator)是那些在一个PoS系统中持有债券货币(bonding currency)的人。验证人集合囊括了所有系统中的验证人，委员会则是那些在一段时间被系统选来验证区块的验证人，而提议者(proposer)是从验证者集合中选出来的收集交易并组成区块的验证人。<br>PoS协议有两个主要的类别：基于链的和PBFT形式的。在基于链的系统中，一个验证者被伪随机的选出来称为区块提议者并创建一个区块。这个区块会被下一轮的提议者扩展。这是对Nakamoto的PoW共识的一种模拟。在这种情况下，当区块移动到更深层的链中时，它会在概率上逐步确定。在BFT形式下的PoS区块链中，在每一个会和会从验证人中随机选择一个出来称为提议者去提出一个新的区块并加入到区块链中。剩下的验证人投票决定是否纳入这个新的区块，验证人的投票权重由他们所持有的债券多少决定。如果同意接收这个新区块的验证人人数达到了预设值，共识就达成了。</p>
+<h3 id="1-4-模型"><a href="#1-4-模型" class="headerlink" title="1.4 模型"></a>1.4 模型</h3><h4 id="1-4-1-网络和算力同步模型"><a href="#1-4-1-网络和算力同步模型" class="headerlink" title="1.4.1 网络和算力同步模型"></a>1.4.1 网络和算力同步模型</h4><p>在传统的分布式系统文章和区块链共识中，我们都考虑到了信息的传递模型，即处理器经由双向交流渠道传递信息的方式沟通。在区块链共识协议中，这些节点形成一个点对点网络，即每个信息都会经由一个流言协议(gossip protocol)传递给在网络中的每一个节点。不同的协议根据他们运行的不同环境定义了不同的时间模型。简言之，一些协议被设计为可以运行在可能丢失信息或导致信息延迟的不可靠网络中，比如互联网，而另一些协议则进行了在可靠渠道中运行的优化，比如公司的私有内网(permissioned company intranets)。这些协议在不同的同步假设下运行。<br>在一个完全同步的网络中，信息延迟有一个已知的上限，并且所有的信息都遵循他们被发送的线性顺序。这些假设经常在运用中被认为不切实际，因为它假设系统中存在一个全面的同步时钟(global synchronization clock)， 但是实际上这在一个大型的，公有化的分布式系统中是不可行的。因为在完全同步的状态下信息传递的存在上限，算法就可以由回合制运转。同步网络假设信息的延迟有一个上限，但是信息不一定需要按顺序抵达[23]。<br>半同步网络假设信息的传递有一个在实验前并不是很明确的上限，但是这个上限的分布是已知的[6]。<br>局部同步网络假设信息传递延迟或者处理的相对时间有一个上限，但是在实验前任何协议中的节点都不知道它的数值。这个模型假设被发送的信息会在一个固定的时间限内抵达接收者。换言之，尽管信息可能会在一个上限内随意延迟，但是最终他们还是会在时间限内抵达[23]。<br>不同步指的是信息抵达的时间或者处理步骤的间隙时间是没有上限的。信息可能会延迟随意时间，并且信息传递所使用的时间没有一个时间上限[23]。</p>
+<h4 id="1-4-2-对抗性模型"><a href="#1-4-2-对抗性模型" class="headerlink" title="1.4.2 对抗性模型"></a>1.4.2 对抗性模型</h4><p>协议假设了不同类型的敌人并对此制定了防御计划。在密码学文献中，被感染的一方可以特指静态或适应性的。静态敌人此前感染了一定数量的网络节点，并对他们实行了完全控制。他们无法改变被感染的节点或者去感染新的节点。另一方面，适应性的敌人有能力去控制节点，并接着控制另外的节点从而最大程度的达到他们损坏网络功能的概率。换言之，他们会根据环境的变化而改变策略。<br>适应性敌人有一定的层次。弱适应性敌人只能根据过去的信息感染节点，但不能改变已经发送的信息。此外，这类敌人可以轻微的感染群体，但是这种感染比群体的活动所花的时间还要长。这类敌人如果可以提前预测到提议者或者区块制造者，他们页可以感染这类节点。强适应性敌人可以看到所以由诚实的节点在任何回合发送的信息，并且根据信息的内容，决定是否通过改变它的信息或者破坏信息传递而损坏此节点。这些损坏都是瞬间的。<br>此外，共识协议发表了两个主要的失败模型，一个是崩溃失败，指的是一个进程在没有任何警告的情况下停止，另一个则是拜占庭错误，指的是当进程表现出任意类型的故障[16]。传统的分布式共识协议，如Paxos[28]和RAFT[29]，设计为在没有敌人的设定下运行，所以只能容许崩溃失败。然而区块链共识协议则必须强大到可以在有敌人的设定下运行，所以必须要同时容许崩溃失败和拜占庭错误。<br>一个协议所能容许的敌人模型取决于委员会的选举是否会偏袒一方，抑或随机性的源头在下一轮开始的时候被泄露从而使得委员会可被预测。第四部分对此进行了更多的讨论。</p>
+<h4 id="1-4-3-经济模型"><a href="#1-4-3-经济模型" class="headerlink" title="1.4.3 经济模型"></a>1.4.3 经济模型</h4><p>因为验证者在PoS框架中因为诚实的验证而收到奖励，所以我们不能把基于公链的PoS框架和他们各自的激励结构分开。激励结构是基于人类行为开发的。相近于传统经济学，协议可以被认为兼容近似于Nash平衡或者ε-Nash平衡的激励。在一个Nash平衡中，没有人的激励是从他们的行为中来的[3]。一个ε-Nash平衡大体上满足Nash平衡，即一个人可以从他的行为中获得少量的激励。我们研究的大部分协议都没有定义激励，因此我们不会对他们进行一个正式的经济学分析，因为我们没有办法评价他们的经济学模型。</p>
+<h4 id="1-4-4-协议在每个模型的分析"><a href="#1-4-4-协议在每个模型的分析" class="headerlink" title="1.4.4 协议在每个模型的分析"></a>1.4.4 协议在每个模型的分析</h4><p>表格1简洁的表现了每个我们要分析的协议的网络和敌人模型。其中的虚线意味着协议并没有提供对于相应模型的全部信息。这里我们要解释一下这些协议的网络和敌人模型的细微差别。除非特别指出，没有一个协议详尽解释了激励模型，或者进行了正式的经济学分析。<br>Tendermint在提议阶段是局部同步，一旦区块被提出，在接下来的回合里面为不同步。这个协议容许弱适应性敌人控制最多三分之一的拜占庭节点。<br>Thunderella有一个乐观的，不同步的，快速路径，结合一个同步的底层区块链，因此协议最终是同步的。协议容许弱适应性敌人，可以解决以随机预言机模型形式下擦除的适应性安全问题。这种情况下，敌人可以用重新排序或者延迟到达的方式安排信息，但是他们不能改变诚实节点播送的内容。任何仅仅是控制一小部分算力的联盟(coalition)都需要遵循ε-Nash平衡，因此敌人在这种情况下不能专区任何超过他们应得的奖励。这是根据Pass和Shi在Fruitchains里提出的公平性概念而提出的[17]。<br>Algorand</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2019/12/05/sok/" class="article-date">
+  <time datetime="2019-12-05T09:02:18.000Z" itemprop="datePublished">2019-12-05</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/translation/">translation</a>
+  </div>
+
+
+          </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mining/">mining</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2019/12/05/Revisiting-Fast-PBFT/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Revisiting-Fast-PBFT 中文翻译</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>If you have any concerns or questions, please contact me.</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </body>
+</html>

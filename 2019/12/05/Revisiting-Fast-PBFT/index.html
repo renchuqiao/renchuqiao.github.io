@@ -3,24 +3,24 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Revisiting-Fast-PBFT | Chuqiao&#39;s Blog</title>
+  <title>Revisiting-Fast-PBFT 中文翻译 | Chuqiao&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原作者Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著
-转载请注明出处
-概括在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日志时间">
+  <meta name="description" content="转载请注明出处
+原作者Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著
+摘要 - 在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Revisiting-Fast-PBFT">
+<meta property="og:title" content="Revisiting-Fast-PBFT 中文翻译">
 <meta property="og:url" content="http://yoursite.com/2019/12/05/Revisiting-Fast-PBFT/index.html">
 <meta property="og:site_name" content="Chuqiao's Blog">
-<meta property="og:description" content="原作者Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著
-转载请注明出处
-概括在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日志时间">
-<meta property="og:updated_time" content="2019-12-05T08:58:56.164Z">
+<meta property="og:description" content="转载请注明出处
+原作者Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著
+摘要 - 在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日">
+<meta property="og:updated_time" content="2019-12-05T09:05:14.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Revisiting-Fast-PBFT">
-<meta name="twitter:description" content="原作者Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著
-转载请注明出处
-概括在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日志时间">
+<meta name="twitter:title" content="Revisiting-Fast-PBFT 中文翻译">
+<meta name="twitter:description" content="转载请注明出处
+原作者Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著
+摘要 - 在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日">
   
     <link rel="alternate" href="/atom.xml" title="Chuqiao&#39;s Blog" type="application/atom+xml">
   
@@ -60,7 +60,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Revisiting-Fast-PBFT
+      Revisiting-Fast-PBFT 中文翻译
     </h1>
   
 
@@ -68,9 +68,9 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>原作者<br>Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著</p>
-<p><strong>转载请注明出处</strong></p>
-<h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><p>在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日志时间段中发现问题</p>
+        <p><strong>转载请注明出处</strong></p>
+<p>原作者<br>Ittai Abraham，Guy Gueta，Dahlia Malkhi, VMware Research 著</p>
+<p><em>摘要</em> - <strong>在这份说明中， 我们发现了一个象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]以及FaB系统中的活跃度违规[14, 15]。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日志时间段中发现问题</strong></p>
 <h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1.引言"></a>1.引言</h2><p>Castro和Liskov提出的实用拜占庭容错算法(PBFT)[3, 4]是一个里程碑式的方法，它使得拜占庭容错算法可以有复制(replication)。在PBFT提出之后，很多学者都致力于提高PBFT协议的效率。其中一个分支围绕着乐观性(optimism)展开[10, 14, 15, 7, 9, 8, 5, 2]。在这条分支上，焦点在于如何提供一个快速的常用例（比如没有链接或者服务器错误）。在其他情况下，乐观解法倒退回一些有强大进程保证的替补方案。</p>
 <p>在这份说明中，我们发现在乐观分支下的一些重要研究并没有正确的处理乐观性(optimism)。我们在第二部分展示了象鼻虫系统(Zyzzyva)的安全漏洞[7, 9, 8]。我们在第三部分展示了FaB系统[14, 15]如何被其”过分安全”的特征卡住。为了展示这些问题，我们设定了一些简单的场景，包括四个复制和一到两个检视(view)变化。在如上所有的场景中我们能从第一个日志时间段中发现问题我们如下也发现了在其他快速拜占庭复制方案中，乐观的分支没有完全和正常的协议关联，因此他们不是很快速。</p>
 <p>因此在[12]中发布的关于提供拜占庭快速Paxos算法的挑战依然存在：</p>
@@ -344,7 +344,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2019/12/05/sok/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Sok - 区块链中可供选择的共识协议的元分析
+        
+      </div>
+    </a>
   
   
     <a href="/2019/12/05/Defi-hackathon/" id="article-nav-older" class="article-nav-link-wrap older">
